@@ -1,0 +1,6 @@
+SELECT nomeUsuario, COUNT(nomeUsuario) AS quantidade
+FROM defeitos
+INNER JOIN usuario ON defeitos.codUsuario = usuario.codUsuario
+WHERE
+DATE_FORMAT(defeitos.dataDefeito,'%d/%m/%Y') BETWEEN 2006-12-01 AND 2006-12-30
+ORDER BY quantidade
